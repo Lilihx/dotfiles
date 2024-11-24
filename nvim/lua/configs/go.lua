@@ -130,12 +130,12 @@ require("go").setup({
 	iferr_vertical_shift = 4, -- defines where the cursor will end up vertically from the begining of if err statement
 })
 
---
-local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.go",
-	callback = function()
-		require("go.format").goimports()
-	end,
-	group = format_sync_grp,
-})
+-- --
+-- local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		require("go.format").goimports()
+-- 	end,
+-- 	group = format_sync_grp,
+-- })

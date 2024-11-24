@@ -1,6 +1,4 @@
-require("nvchad.mappings")
-
--- add yours here
+require "nvchad.mappings"
 
 local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
@@ -33,7 +31,7 @@ map("n", "<leader>nr", ":NvimTreeRefresh<CR>", opt)
 -- map("n", "<leader>fh", builtin.help_tags, opt)
 --
 -- FZF
-local fzfBuiltin = require("fzf-lua")
+local fzfBuiltin = require "fzf-lua"
 map("n", "<leader>ff", fzfBuiltin.files, { desc = "Fzf files" })
 map("n", "<leader>fw", fzfBuiltin.live_grep, { desc = "Fzf Grep" })
 map("n", "<leader>fb", fzfBuiltin.buffers, { desc = "Fzf Buffers" })
@@ -42,8 +40,13 @@ map("n", "<leader>gc", fzfBuiltin.git_bcommits, { desc = "Browse File Commits" }
 map("n", "<leader>gt", fzfBuiltin.git_status, { desc = "Git Status" })
 map("n", "<leader>r", fzfBuiltin.registers, { desc = "Registers" })
 map("n", "<leader>m", fzfBuiltin.marks, { desc = "Marks" })
-map("n", "<leader>s", ":lua require'fzf-lua'.spell_suggest({ winopts = {relative='cursor',row=1.01, col=0, height=0.2, width=0.2} })<cr>", { desc = "Spelling Suggestions" })
-map("n", "<leader>ca", fzfBuiltin.lsp_code_actions, {desc = "Code Actions"})
+map(
+  "n",
+  "<leader>s",
+  ":lua require'fzf-lua'.spell_suggest({ winopts = {relative='cursor',row=1.01, col=0, height=0.2, width=0.2} })<cr>",
+  { desc = "Spelling Suggestions" }
+)
+map("n", "<leader>ca", fzfBuiltin.lsp_code_actions, { desc = "Code Actions" })
 --
 
 -- LSP
